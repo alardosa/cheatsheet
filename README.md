@@ -4,6 +4,8 @@ This is the supplementary cheat sheet document for our course: [Build a Backend 
 
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
+- [Python](#python)
+- [Atom](#atom)
 - [Git](#git)
 - [SSH Key Management](#ssh-key-management)
 - [Virtual Environments](#virtual-environments)
@@ -13,7 +15,42 @@ This is the supplementary cheat sheet document for our course: [Build a Backend 
 
 <!-- /TOC -->
 
+## Python
+```
+sudo apt install python3 python3-pip build-essential python3-dev
+
+python3 -V
+```
+
+## Atom
+```
+Download and Install: https://atom.io/download/deb
+
+Type in terminal:
+python3 -m pip install python-language-server[all]
+python3 -m pip install git+https://github.com/tomv564/pyls-mypy.git
+
+Add Packages:
+atom-django
+autocomplete-python-jedi
+
+auto-complete-python
+Python Executable Paths: /usr/bin/python3
+Extra Paths For Packages: /usr/bin/python3/site-packages
+
+ide-python
+atom-ide-base
+atom-ide-debugger
+atom-ide-console
+platformio-ide-terminal
+script
+tom-django
+```
+
 ## Git
+```
+Download and Install: https://git-scm.com/download/linux
+```
 
 Use the below Git commands in the Windows Command Prompt or macOS Terminal.
 
@@ -44,8 +81,9 @@ git commit -am "Commit message"
 *Note: This only needs to be done once, the details are provided by GitHub after creating a new project*
 
 ```
-git remote add origin <URL TO PROJECT>
+git remote add origin git@github.com:username/repository.git
 git push -u origin master
+yes
 ```
 
 **Push changes to GitHub**
