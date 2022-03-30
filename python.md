@@ -1,4 +1,4 @@
-# Build a Backend REST API with Python & Django
+# Setup and Document: Backend REST API with Python & Django
 
 This is the supplementary cheat sheet document for our course: [Build a Backend REST API with Python & Django](https://www.linkedin.com/in/alardosa/)
 
@@ -12,6 +12,7 @@ This is the supplementary cheat sheet document for our course: [Build a Backend 
 - [Django Management Commands](#django-management-commands)
 - [Vagrant](#vagrant)
 - [Terminal / GitBash Commands](#terminal-gitbash-commands)
+- [ModHeader](#modheader)
 
 <!-- /TOC -->
 
@@ -63,14 +64,18 @@ git config --global user.email "your@email.com"
 git config --global user.name "Your Name"
 ```
 
-**Initialise a new Git repository**
 
+**Use git under your project directory**
+```
+example Go to 'profiles-rest-api' directory 'Git Bash Here'
+```
+
+**Initialise a new Git repository**
 ```
 git init
 ```
 
 **Commit changes to Git**
-
 ```
 git add .
 git commit -am "Commit message"
@@ -83,7 +88,7 @@ The below commands are used to manage SSH keys on your local development machine
 **Checking for existing SSH key**
 
 ```
-ls ~/.ssh/
+ls ~/.ssh/ or ls -al ~/.ssh
 ```
 
 **Print contents of public key**
@@ -96,6 +101,12 @@ cat ~/.ssh/id_rsa.pub
 
 ```
 ssh-keygen -t rsa -b 4096 -C "EMAIL ADDRESS"
+```
+
+**Login and Setup SSH to your GitHub:**
+```
+Setup Your Key: https://github.com/settings/ssh/new
+Create a new repository: https://github.com/new
 ```
 
 **Set Git remote**
@@ -248,4 +259,9 @@ Change to parent directory
 
 ```
 cd ..
+```
+
+## ModHeader
+```
+Download and Install: https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj?hl=en
 ```
