@@ -54,9 +54,7 @@ Download and Install: https://git-scm.com/download/linux
 Use the below Git commands in the Windows Command Prompt or macOS Terminal.
 
 **Configure default email and name**
-
 *Note: This only needs to be done the first time you use Git on your machine*
-
 ```
 git config --global user.email "your@email.com"
 git config --global user.name "Your Name"
@@ -78,9 +76,30 @@ git add .
 git commit -am "Commit message"
 ```
 
-**SSH Key Management**
+**Git clone if theres existing repo in Github**
+*Clones a repository into a newly created directory*
+```
+git clone git@github.com:<username>/<repository>.git
+```
 
-The below commands are used to manage SSH keys on your local development machine.
+**Set Git remote**
+*Note: This only needs to be done once, the details are provided by GitHub after creating a new project*
+```
+git remote add origin git@github.com:<username>/<repository>.git
+```
+
+**Push changes to GitHub**
+```
+git push -u origin master
+yes
+
+or
+
+git push origin
+```
+
+## SSH Key Management
+*The below commands are used to manage SSH keys on your local development machine.*
 
 **Checking for existing SSH key**
 
@@ -89,13 +108,11 @@ ls ~/.ssh/ or ls -al ~/.ssh
 ```
 
 **Print contents of public key**
-
 ```
 cat ~/.ssh/id_rsa.pub
 ```
 
 **Generate new SSH key on your local machine**
-
 ```
 ssh-keygen -t rsa -b 4096 -C "EMAIL ADDRESS"
 ```
@@ -104,30 +121,6 @@ ssh-keygen -t rsa -b 4096 -C "EMAIL ADDRESS"
 ```
 Setup Your Key: https://github.com/settings/ssh/new
 Create a new repository: https://github.com/new
-```
-
-**Git clone if theres existing repo in Github**
-```
-git clone git@github.com:<username>/<repository>.git
-```
-
-**Set Git remote**
-
-*Note: This only needs to be done once, the details are provided by GitHub after creating a new project*
-
-```
-git remote add origin git@github.com:username/repository.git
-```
-
-**Push changes to GitHub**
-
-```
-git push -u origin master
-yes
-
-or
-
-git push origin
 ```
 
 ## Docker
