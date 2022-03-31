@@ -7,11 +7,9 @@ This is the supplementary cheat sheet document for our course: [Build a Backend 
 - [Python](#python)
 - [Atom](#atom)
 - [Git](#git)
-- [Docker](#docker)
 - [SSH Key Management](#ssh-key-management)
-- [Virtual Environments](#virtual-environments)
+- [Docker](#docker)
 - [Django Management Commands](#django-management-commands)
-- [Vagrant](#vagrant)
 - [Terminal / GitBash Commands](#terminal-gitbash-commands)
 - [ModHeader](#modheader)
 
@@ -137,7 +135,6 @@ git push origin
 ```
 Full intstructions:
 https://docs.docker.com/engine/install/ubuntu/
-https://docs.docker.com/compose/install/
 
 IN TERMINAL:
 sudo apt-get update
@@ -167,6 +164,7 @@ sudo apt-get install docker-ce=5:20.10.14~3-0~ubuntu-impish docker-ce-cli=5:20.1
 sudo docker run hello-world
 
 Create 'Dockerfile' in your 'project directory'
+or copy https://github.com/alardosa/cheatlist/blob/master/Dockerfile
 
 List of available images for python: https://hub.docker.com/_/python
 
@@ -178,7 +176,7 @@ Packges: https://pypi.org/
 Under your 'project directory' create 'app' directory
 
 Under your 'project directory' create 'requirements.txt'
-or copy: https://github.com/alardosa/recipe-app-api/blob/master/requirements.txt
+or copy: https://github.com/alardosa/cheatlist/blob/master/requirements.txt
 
 GET LATEST PACKES OF:
 Django
@@ -192,37 +190,20 @@ sudo docker build .
 ```
 **Configure Docker Compose**
 ```
+Full intstructions:
+https://docs.docker.com/compose/install/
+
 Under your 'project directory' create 'docker-compose.yml'
-```
+or copy https://github.com/alardosa/cheatlist/blob/master/docker-compose.yml
 
-## Virtual Environments
+IN TERMINAL
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
-The below commands are used for managing Virtual Environments using Python3-env. Use these commands when connected to your Vagrant server.
+sudo chmod +x /usr/local/bin/docker-compose
 
-**Create new environment**
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
-```
-python -m venv ~/env
-```
-
-**Activate virtual environment**
-
-```
-source ~/env/bin/activate
-```
-
-**De-activate virtual environment**
-
-```
-deactivate
-```
-
-**Install requirements from requirements.txt**
-
-*Note: Virtual environment must be activated*
-
-```
-pip install -r requirements.txt
+sudo docker-compose build
 ```
 
 ## Django Management Commands
@@ -261,56 +242,6 @@ python manage.py migrate
 
 ```
 python manage.py createsuperuser
-```
-
-## Vagrant
-
-These commands are used for managing Vagrant using the GitBash or Terminal windows.
-
-**Initialise Vagrant on project**
-
-```
-vagrant init ubuntu/bionic64
-```
-
-**Start Vagrant box**
-
-```
-vagrant up
-```
-
-**Connect to Vagrant box**
-
-```
-vagrant ssh
-```
-
-**Disconnect from Vagrant box**
-
-*Note: This command is a standard linux command for ending an SSH session*
-
-```
-exit
-```
-
-**Stop Vagrant box**
-
-```
-vagrant halt
-```
-
-**Remove Vagrant box**
-
-```
-vagrant destroy
-```
-
-**Update Vagrant box image**
-
-*Note: you must rebuild the image after updating*
-
-```
-vagrant box update
 ```
 
 ## Terminal / GitBash Commands
