@@ -7,6 +7,7 @@ This is the supplementary cheat sheet document for our course: [Build a Backend 
 - [Python](#python)
 - [Atom](#atom)
 - [Git](#git)
+- [Docker](#docker)
 - [SSH Key Management](#ssh-key-management)
 - [Virtual Environments](#virtual-environments)
 - [Django Management Commands](#django-management-commands)
@@ -22,7 +23,6 @@ sudo apt install python3 python3-pip build-essential python3-dev
 
 python3 -V
 ```
-
 ## Atom
 ```
 Download and Install: https://atom.io/download/deb
@@ -30,9 +30,9 @@ Download and Install: https://atom.io/download/deb
 Type in terminal:
 python3 -m pip install python-language-server[all]
 python3 -m pip install git+https://github.com/tomv564/pyls-mypy.git
-
-Add Packages:
-atom-django
+```
+**Add Atom Packages**
+```atom-django
 autocomplete-python-jedi
 
 auto-complete-python
@@ -63,7 +63,6 @@ Use the below Git commands in the Windows Command Prompt or macOS Terminal.
 git config --global user.email "your@email.com"
 git config --global user.name "Your Name"
 ```
-
 
 **Use git under your project directory**
 ```
@@ -109,6 +108,11 @@ Setup Your Key: https://github.com/settings/ssh/new
 Create a new repository: https://github.com/new
 ```
 
+**Git clone if theres existing repo in Github**
+```
+git clone git@github.com:<username>/<repository>.git
+```
+
 **Set Git remote**
 
 *Note: This only needs to be done once, the details are provided by GitHub after creating a new project*
@@ -128,6 +132,68 @@ or
 git push origin
 ```
 
+## Docker
+**Install Docker**
+```
+Full intstructions:
+https://docs.docker.com/engine/install/ubuntu/
+https://docs.docker.com/compose/install/
+
+IN TERMINAL:
+sudo apt-get update
+
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+apt-cache madison docker-ce
+
+EXAMPLE:
+sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
+sudo apt-get install docker-ce=5:20.10.14~3-0~ubuntu-impish docker-ce-cli=5:20.10.14~3-0~ubuntu-impish containerd.io
+
+sudo docker run hello-world
+
+Create 'Dockerfile' in your 'project directory'
+
+List of available images for python: https://hub.docker.com/_/python
+
+```
+**Add Dockerfile and Install Python Packages**
+```
+Packges: https://pypi.org/
+
+Under your 'project directory' create 'app' directory
+
+Under your 'project directory' create 'requirements.txt'
+or copy: https://github.com/alardosa/recipe-app-api/blob/master/requirements.txt
+
+GET LATEST PACKES OF:
+Django
+djangorestframework
+psycopg2
+Pillow
+flake8
+
+IN TERMINAL
+sudo docker build .
+```
+**Configure Docker Compose**
+```
+Under your 'project directory' create 'docker-compose.yml'
+```
 
 ## Virtual Environments
 
