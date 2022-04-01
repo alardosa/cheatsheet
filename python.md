@@ -9,6 +9,7 @@ This is the supplementary cheat sheet document for our course: [Build a Backend 
 - [Git](#git)
 - [SSH Key Management](#ssh-key-management)
 - [Docker](#docker)
+- [Docker Compose](#docker-compse)
 - [Django Management Commands](#django-management-commands)
 - [Terminal / GitBash Commands](#terminal-gitbash-commands)
 - [ModHeader](#modheader)
@@ -17,7 +18,8 @@ This is the supplementary cheat sheet document for our course: [Build a Backend 
 
 ## Python
 ```
-sudo apt install python3 python3-pip build-essential python3-dev
+sudo su
+apt install python3 python3-pip build-essential python3-dev
 
 python3 -V
 ```
@@ -129,10 +131,13 @@ Create a new repository: https://github.com/new
 Full intstructions:
 https://docs.docker.com/engine/install/ubuntu/
 
-IN TERMINAL:
-sudo apt-get update
+Container applications:
+https://hub.docker.com
 
-sudo apt-get install \
+IN TERMINAL:
+apt-get update
+
+apt-get install \
     ca-certificates \
     curl \
     gnupg \
@@ -144,20 +149,20 @@ echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-sudo apt-get update
+apt-get update
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io
+apt-get install docker-ce docker-ce-cli containerd.io
 
 apt-cache madison docker-ce
 
 EXAMPLE:
-sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
-sudo apt-get install docker-ce=5:20.10.14~3-0~ubuntu-impish docker-ce-cli=5:20.10.14~3-0~ubuntu-impish containerd.io
+apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
+apt-get install docker-ce=5:20.10.14~3-0~ubuntu-impish docker-ce-cli=5:20.10.14~3-0~ubuntu-impish containerd.io
 
-sudo docker run hello-world
+docker run hello-world
 
 Create 'Dockerfile' in your 'project directory'
-or copy https://github.com/alardosa/cheatlist/blob/master/Dockerfile
+or copy https://github.com/alardosa/cheatsheet/blob/master/Dockerfile
 
 List of available images for python: https://hub.docker.com/_/python
 
@@ -169,7 +174,7 @@ Packges: https://pypi.org/
 Under your 'project directory' create 'app' directory
 
 Under your 'project directory' create 'requirements.txt'
-or copy: https://github.com/alardosa/cheatlist/blob/master/requirements.txt
+or copy: https://github.com/alardosa/cheatsheet/blob/master/requirements.txt
 
 GET LATEST PACKES OF:
 Django
@@ -179,28 +184,32 @@ Pillow
 flake8
 
 IN TERMINAL
-sudo docker build .
+docker build .
+
+CHECK IF INSTALLED
+pip freeze
+
+
 ```
-**Configure Docker Compose**
+
+## Docker Compose
+**Install**
 ```
 Full intstructions:
 https://docs.docker.com/compose/install/
 
 Under your 'project directory' create 'docker-compose.yml'
-or copy https://github.com/alardosa/cheatlist/blob/master/docker-compose.yml
+or copy https://github.com/alardosa/cheatsheet/blob/master/docker-compose.yml
 
-IN TERMINAL
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-sudo chmod +x /usr/local/bin/docker-compose
-
-sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-
-sudo docker-compose build
+IN TERMINAL:
+docker-compose build
+```
+**Run command in app**
+```
+docker-compose run app sh -c "django-admin.py startproject app ."
 ```
 
 ## Django Management Commands
-
 **Create new Django project**
 
 ```
