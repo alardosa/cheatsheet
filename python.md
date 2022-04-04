@@ -28,6 +28,7 @@ https://atom.io/download/deb
 
 Git:
 https://git-scm.com/download/linux
+https://github.com/git-guides/git-pull
 
 Docker:
 https://docs.docker.com/engine/install/ubuntu/
