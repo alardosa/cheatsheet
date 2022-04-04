@@ -169,27 +169,24 @@ List of available images for python: https://hub.docker.com/_/python
 ```
 **Add Dockerfile and Install Python Packages**
 ```
-Packges: https://pypi.org/
-
 Under your 'project directory' create 'app' directory
 
 Under your 'project directory' create 'requirements.txt'
 or copy: https://github.com/alardosa/cheatsheet/blob/master/requirements.txt
 
-GET LATEST PACKES OF:
+GET LATEST Packges: https://pypi.org/
 Django
 djangorestframework
 psycopg2
 Pillow
 flake8
 
+OR INSTALL EACH IN TERMINAL:
+pip install -U <packagename>
+pip show <packagename>
+
 IN TERMINAL
 docker build .
-
-CHECK IF INSTALLED
-pip freeze
-
-
 ```
 
 ## Docker Compose
@@ -208,6 +205,21 @@ docker-compose build
 ```
 docker-compose run app sh -c "django-admin.py startproject app ."
 ```
+
+## Travis CI
+```
+Login to https://travis-ci.com using github account
+
+Then go here: https://app.travis-ci.com/organizations/alardosa/repositories
+
+Add .travis.yml
+https://github.com/alardosa/cheatsheet/blob/master/.travis.yml
+
+Add .flake8 in app/
+Add https://github.com/alardosa/cheatsheet/blob/master/.travis.yml
+
+```
+
 
 ## Django Management Commands
 **Create new Django project**
@@ -244,6 +256,15 @@ python manage.py migrate
 
 ```
 python manage.py createsuperuser
+```
+
+**Install/Update Django and djangorestframework**
+```
+pip install -U Django
+pip show django
+
+pip install -U djangorestframework
+pip show djangorestframework
 ```
 
 ## Terminal / GitBash Commands
