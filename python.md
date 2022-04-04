@@ -4,35 +4,54 @@ This is the supplementary cheat sheet document for our course: [Build a Backend 
 
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
+- [Installations](#installations)
 - [Python](#python)
 - [Atom](#atom)
 - [Git](#git)
 - [SSH Key Management](#ssh-key-management)
 - [Docker](#docker)
 - [Docker Compose](#docker-compse)
+- [Github Actions](#github-actions)
 - [Django Management Commands](#django-management-commands)
 - [Terminal / GitBash Commands](#terminal-gitbash-commands)
 - [ModHeader](#modheader)
 
 <!-- /TOC -->
-
-## Python
+## Installations
 ```
-sudo su
+Python:
 apt install python3 python3-pip build-essential python3-dev
-
 python3 -V
+
+Atom:
+https://atom.io/download/deb
+
+Git:
+https://git-scm.com/download/linux
+
+Docker:
+https://docs.docker.com/engine/install/ubuntu/
+
+DockerCompose:
+https://docs.docker.com/compose/install/
+
+Packages: https://pypi.org/
+django, djangorestframework, psycopg, pillow, flake8
+
+pip install -U <packagename>
+pip show <packagename>
+
 ```
+
 ## Atom
 ```
-Download and Install: https://atom.io/download/deb
-
 Type in terminal:
 python3 -m pip install python-language-server[all]
 python3 -m pip install git+https://github.com/tomv564/pyls-mypy.git
 ```
 **Add Atom Packages**
-```atom-django
+```
+atom-django
 autocomplete-python-jedi
 
 auto-complete-python
@@ -45,16 +64,9 @@ atom-ide-debugger
 atom-ide-console
 platformio-ide-terminal
 script
-tom-django
 ```
 
 ## Git
-```
-Download and Install: https://git-scm.com/download/linux
-```
-
-Use the below Git commands in the Windows Command Prompt or macOS Terminal.
-
 **Configure default email and name**
 *Note: This only needs to be done the first time you use Git on your machine*
 ```
@@ -93,11 +105,14 @@ git remote add origin git@github.com:<username>/<repository>.git
 **Push changes to GitHub**
 ```
 git push -u origin master
-yes
-
 or
-
 git push origin
+```
+
+**Pull**
+```
+git pull https://github.com/alardosa/cheatsheet/
+
 ```
 
 ## SSH Key Management
@@ -126,11 +141,7 @@ Create a new repository: https://github.com/new
 ```
 
 ## Docker
-**Install Docker**
 ```
-Full intstructions:
-https://docs.docker.com/engine/install/ubuntu/
-
 Container applications:
 https://hub.docker.com
 
@@ -167,34 +178,16 @@ or copy https://github.com/alardosa/cheatsheet/blob/master/Dockerfile
 List of available images for python: https://hub.docker.com/_/python
 
 ```
-**Add Dockerfile and Install Python Packages**
+**Add Dockerfile**
 ```
 Under your 'project directory' create 'app' directory
-
-Under your 'project directory' create 'requirements.txt'
-or copy: https://github.com/alardosa/cheatsheet/blob/master/requirements.txt
-
-GET LATEST Packges: https://pypi.org/
-Django
-djangorestframework
-psycopg2
-Pillow
-flake8
-
-OR INSTALL EACH IN TERMINAL:
-pip install -U <packagename>
-pip show <packagename>
 
 IN TERMINAL
 docker build .
 ```
 
 ## Docker Compose
-**Install**
 ```
-Full intstructions:
-https://docs.docker.com/compose/install/
-
 Under your 'project directory' create 'docker-compose.yml'
 or copy https://github.com/alardosa/cheatsheet/blob/master/docker-compose.yml
 
@@ -206,18 +199,16 @@ docker-compose build
 docker-compose run app sh -c "django-admin.py startproject app ."
 ```
 
-## Travis CI
+## Github Actions
 ```
-Login to https://travis-ci.com using github account
 
-Then go here: https://app.travis-ci.com/organizations/alardosa/repositories
+https://github.com/alardosa/cheatsheet/actions/new
 
-Add .travis.yml
-https://github.com/alardosa/cheatsheet/blob/master/.travis.yml
 
-Add .flake8 in app/
-Add https://github.com/alardosa/cheatsheet/blob/master/.travis.yml
 
+Infos:
+https://docs.github.com/en/actions
+https://www.youtube.com/watch?v=R8_veQiYBjI
 ```
 
 
